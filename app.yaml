@@ -1,0 +1,10 @@
+runtime: nodejs16  
+env: flex
+
+handlers:
+- url: /
+  static_files: dist/cloud_frontend/index.html
+  upload: dist/cloud_frontend/index.html
+
+- url: /
+  static_dir: dist/cloud_frontend
