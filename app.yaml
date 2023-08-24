@@ -1,10 +1,26 @@
-runtime: nodejs16  
-env: flex
+runtime: nodejs16
+env: standard
+instance_class: F2
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 0
+  max_instances: 10
+  target_throughput_utilization: 0.65
 
 handlers:
-- url: /
+- url: /(.*\.(js|css|ico|png|jpg|jpeg|gif|woff|woff2|ttf|svg|map))$
+  static_files: dist/cloud_frontend/\1
+  upload: dist/(.*)
+
+- url: /(.*\.json)$
+  static_files: dist/cloud_frontend/\1
+  upload: dist/cloud_frontend/(.*\.json)
+  http_headers:
+    Access-Control-Allow-Origin: '*'
+
+- url: /.*
   static_files: dist/cloud_frontend/index.html
   upload: dist/cloud_frontend/index.html
-
-- url: /
-  static_dir: dist/cloud_frontend
+  http_headers:
+    Cache-Control: 'no-store'

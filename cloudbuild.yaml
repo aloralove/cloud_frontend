@@ -1,7 +1,15 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['install']
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'build']
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy']
+  # Install nvm and the version of Node.js specified
+  - name: 'gcr.io/cloud-builders/npm'
+    entrypoint: 'bash'
+    args: ['-c', 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && . ~/.nvm/nvm.sh && nvm install 16 && nvm use 16']
+  # Install dependencies
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install']
+  # Build the project
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['run', 'build', '--', '--configuration=production']
+  # Deploy the project
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', 'app.yaml']
+timeout: '16600s'
