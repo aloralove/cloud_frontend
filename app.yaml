@@ -20,7 +20,7 @@ handlers:
     Access-Control-Allow-Origin: '*'
 
 - url: /.*
-  static_files: dist/cloud_frontend/src/index.html
-  upload: dist/cloud_frontend/src/index.html
+  static_files: src/index.html
+  upload: src/index.html
   http_headers:
     Cache-Control: 'no-store'
