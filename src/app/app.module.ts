@@ -3,12 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LineChartComponent } from './line-chart/line-chart.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChartComponent } from './chart/chart.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LineChartComponent
+    DashboardComponent,
+    ChartComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+/* For the sidebar */
+#sidebar {
+    width: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+  }
+  
+  /* For the main content */
+  #main-content {
+    margin-left: 5%; /* Same as the sidebar width */
+    padding: 20px;
+  }
+  
