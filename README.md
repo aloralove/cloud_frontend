@@ -2,7 +2,7 @@
 # Angular Dashboard App with Chart.js and Sidebar
 
 ## Description
-This Angular-based web application features a dynamic dashboard, complete with a navigation sidebar and data visualization using Chart.js.
+This Angular-based web application features a dynamic dashboard, complete with a navigation sidebar and data visualization using Chart.js. To see the backend repository, click [here](https://github.com/aloralove/cloud_backend/tree/main#readme).
 
 ## Features
 - Dynamic Dashboard
