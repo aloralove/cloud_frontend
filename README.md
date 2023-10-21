@@ -1,31 +1,68 @@
-<<<<<<< HEAD
-# cloud_frontend
-=======
-# CloudFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+# Angular Dashboard App with Chart.js and Sidebar
 
-## Development server
+## Description
+This project is an Angular-based web application that features a dynamic dashboard. It includes a sidebar for navigation and utilizes Chart.js for data visualization.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Dynamic Dashboard
+- Navigation Sidebar
+- Data Visualization with Chart.js
 
-## Code scaffolding
+## Prerequisites
+- Node.js and npm installed
+- Angular CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+### Clone the Repository
+```bash
+git clone https://github.com/your-username/your-angular-app.git
+cd your-angular-app
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Install Dependencies
+```bash
+npm install
+```
 
-## Running unit tests
+### Run Locally
+```bash
+ng serve
+```
+Navigate to `http://localhost:4200/` to see the app running.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Dockerization
 
-## Running end-to-end tests
+### Build Docker Image
+```bash
+docker build -t your-image-name .
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Run Docker Container
+```bash
+docker run -p 8080:80 your-image-name
+```
+Navigate to `http://localhost:8080/` to see the app running in the Docker container.
 
-## Further help
+### Prerequisites
+- Google Cloud SDK
+- GCP account with App Engine enabled
+- GitHub repository with this project
+- Setting up CI/CD
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
->>>>>>> master
+### Authenticate with Google Cloud:
+- gcloud auth login
+- Navigate to GCP Console and go to your project's App Engine Dashboard.
+- Setup a Cloud Build trigger to point to your GitHub repository.
+- Configure the build to deploy to App Engine upon successful build.
+
+## Contributing
+If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+
+## License
+This project is open-sourced under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+
+## Author
+- [Alora Greer](mailto:alora.greerl@gmail.com)
+
