@@ -2,7 +2,7 @@
 # Angular Dashboard App with Chart.js and Sidebar
 
 ## Description
-This project is an Angular-based web application that features a dynamic dashboard. It includes a sidebar for navigation and utilizes Chart.js for data visualization.
+This Angular-based web application features a dynamic dashboard, complete with a navigation sidebar and data visualization using Chart.js.
 
 ## Features
 - Dynamic Dashboard
@@ -10,7 +10,7 @@ This project is an Angular-based web application that features a dynamic dashboa
 - Data Visualization with Chart.js
 
 ## Prerequisites
-- Node.js and npm installed
+- Node.js and npm
 - Angular CLI
 
 ## Getting Started
@@ -32,37 +32,44 @@ ng serve
 ```
 Navigate to `http://localhost:4200/` to see the app running.
 
-## Dockerization
+### Local Development with Docker 
 
-### Build Docker Image
-```bash
-docker build -t your-image-name .
-```
+1. **Navigate to the Location of Dockerfile**: Navigate to the location of each Dockerfile (for frontend and backend).
 
-### Run Docker Container
-```bash
-docker run -p 8080:80 your-image-name
-```
-Navigate to `http://localhost:8080/` to see the app running in the Docker container.
+2. **Build and Tag the Images**: Build the Docker images for both the frontend and backend locally, which packages your applications along with all their dependencies.
 
-### Prerequisites
+    ```bash
+    docker build -t frontend-image:latest .
+    docker build -t backend-image:latest .
+    ```
+
+3. **Run the Docker Containers Locally**: After the images are built, run them as containers locally. Replace `:latest` with your preferred tag if needed.
+
+    ```bash
+    docker run -p 8080:8080 frontend-image:latest
+    docker run -p 8081:8081 backend-image:latest
+    ```
+
+    This runs the frontend on `http://localhost:8080` and the backend on `http://localhost:8081`.
+
+### Automated Deployment on Google Cloud Platform (GCP)
+
+#### Prerequisites
 - Google Cloud SDK
 - GCP account with App Engine enabled
-- GitHub repository with this project
-- Setting up CI/CD
+- GitHub repository for this project
 
-### Authenticate with Google Cloud:
-- gcloud auth login
-- Navigate to GCP Console and go to your project's App Engine Dashboard.
-- Setup a Cloud Build trigger to point to your GitHub repository.
-- Configure the build to deploy to App Engine upon successful build.
+#### Steps
+1. **Authenticate with Google Cloud**: Run `gcloud auth login`.
+2. Navigate to your project's App Engine Dashboard in the GCP Console.
+3. Set up a Cloud Build trigger pointing to your GitHub repository.
+4. Configure the build to deploy to App Engine upon a successful build.
 
 ## Contributing
-If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
+Feel free to fork the repository and make changes. Pull requests are warmly welcome.
 
 ## License
 This project is open-sourced under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
 ## Author
-- [Alora Greer](mailto:alora.greerl@gmail.com)
-
+- [Alora Greer](mailto:alora.greer@gmail.com)
